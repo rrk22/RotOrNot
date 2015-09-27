@@ -9,4 +9,8 @@
     <string name="upload_photo">Upload Photo</string>
     <string name="next">Next</string>
     <string name="title_activity_compare">CompareActivity</string>
+    <string name="title_activity_final">FinalActivity</string>
+    <string name="Compare">Compare</string>
+    <string name="PlayAgain">Play Again</string>
+    Compare
 </resources>

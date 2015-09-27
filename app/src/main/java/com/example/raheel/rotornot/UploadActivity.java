@@ -18,10 +18,29 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 
+
+
+
+
+
 public class UploadActivity extends AppCompatActivity {
 
     public static final int IMAGE_GALLERY_REQUEST = 20;
     public static ImageView imgPicture;
+    public static Uri imageUri;
+    public Intent intent;
+    public Bitmap bitmap;
+    public static ImageView getCurrentImage()
+    {
+        return imgPicture;
+    }
+
+    public static Uri getUri()
+    {
+        return imageUri;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +56,8 @@ public class UploadActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(v.getContext(), CompareActivity.class);
+                intent = new Intent(v.getContext(), CompareActivity.class);
+                intent.putExtra("BitmapImage", bitmap);
                 startActivity(intent);
             }
         });
@@ -87,7 +107,7 @@ public class UploadActivity extends AppCompatActivity {
         {
             if (requestCode==IMAGE_GALLERY_REQUEST)
             {
-               Uri imageUri = data.getData();
+               imageUri = data.getData();
 
                 //declare a stream to read from SD Card
                 InputStream inputStream;
@@ -95,9 +115,16 @@ public class UploadActivity extends AppCompatActivity {
                 try {
                     inputStream = getContentResolver().openInputStream(imageUri);
                     Bitmap image = BitmapFactory.decodeStream(inputStream);
-
+                    bitmap = image;
                     //show image to user
                     imgPicture.setImageBitmap(image);
+
+
+
+
+
+
+
                 }
                 catch (FileNotFoundException e) {
                     e.printStackTrace();

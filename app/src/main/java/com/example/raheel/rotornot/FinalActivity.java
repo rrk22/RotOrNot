@@ -1,43 +1,25 @@
 package com.example.raheel.rotornot;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 
-public class CompareActivity extends AppCompatActivity {
-
-    private ImageView rotmanImg;
-
+public class FinalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compare);
-        ImageView imgPicture2 = (ImageView)findViewById(R.id.imgPicture2);
-
-
-            Intent intent = getIntent();
-            Bitmap image = (Bitmap) intent.getParcelableExtra("BitmapImage");
-            //Bitmap image = BitmapFactory.decodeStream(inputStream);
-
-            //show image to user
-            imgPicture2.setImageBitmap(image);
-
-
-
-
-
+        setContentView(R.layout.activity_final);
+        Intent intent = getIntent();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_compare, menu);
+        getMenuInflater().inflate(R.menu.menu_final, menu);
         return true;
     }
 
@@ -59,7 +41,7 @@ public class CompareActivity extends AppCompatActivity {
 
     public void sendMessage(View view) {
         // Do something in response to button
-        Intent intent = new Intent(this, FinalActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }

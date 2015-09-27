@@ -40,6 +40,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.raheel.rotornot.UploadActivity" />
         </activity>
+        <activity
+            android:name=".FinalActivity"
+            android:label="@string/title_activity_final"
+            android:parentActivityName=".CompareActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.raheel.rotornot.CompareActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -15,7 +15,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:id="@+id/imgPicture2"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:maxHeight="200dp" />
 
     <ImageView
         android:contentDescription="@string/hello_world"
@@ -26,5 +27,14 @@
         android:id="@+id/rotmanImg"
         android:src="@drawable/rotman_body"
         android:layout_below="@+id/imgPicture2" />
+
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Compare"
+        android:layout_below="@+id/rotmanImg"
+        android:onClick="sendMessage" />
 
 </RelativeLayout>
